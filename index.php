@@ -65,7 +65,7 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
         ";
     }
     echo "<div>";
-    echo "Welcome<br />";
+    echo "Welcome " . htmlspecialchars($_SESSION['username']) . "<br />";
     echo "<a href= 'add.php'>Add Quest</a><br />";
     echo "<a href= 'logout.php'>Logout</a><br />";
     echo "</div>";
@@ -93,7 +93,6 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
 
     echo "<div id='not-yet-started'>";
     $sql = "SELECT * FROM list WHERE id_user = ? AND `status` = 'Not yet started'";
-
     $stmt = $db->prepare($sql);
     $stmt->execute([$_SESSION['id']]);
 
