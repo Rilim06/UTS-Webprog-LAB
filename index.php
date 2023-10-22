@@ -111,36 +111,23 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
         <h1 class="text-1xl md:text-2xl lg:text-3xl ms-4 font-bold">Welcome,
             <?= htmlspecialchars($_SESSION['username']) ?>
         </h1>
-        <!-- <a href="#" class="logo"><span>Welcome,
-                <?= htmlspecialchars($_SESSION['username']) ?>
-            </span></a> -->
-        <ul class="navbar">
-            <!-- <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li> -->
-            <?php
-            if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
-                if ($_SESSION["username"] == 'admin') {
-                    ?>
-                    <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
-                    <!-- <li class="font-semibold text-lg"><a href='food.php'>Food Menu</a><br /></li>
-                    <li class="font-semibold text-lg"><a href='drink.php'>Drink Menu</a><br /></li> -->
-                    <?php
-                } else {
-                    ?>
-                    <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
-                    <!-- <li class="font-semibold text-lg"><a href='food.php'>Food Menu</a><br /></li>
-                    <li class="font-semibold text-lg"><a href='drink.php'>Drink Menu</a><br /></li>
-                    <li class="font-semibold text-lg"><a href='cart.php'>Cart</a><br /></li> -->
-                    <?php
-                }
-            } else { ?>
-                <!-- <li class="font-semibold text-lg"><a href='food.php'>Food Menu</a><br /></li>
-                <li class="font-semibold text-lg"><a href='drink.php'>Drink Menu</a><br /></li>
-                <li class="font-semibold text-lg"><a href='cart.php'>Cart</a><br /></li> -->
+        <?php
+        if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
+            if ($_SESSION["username"] == 'admin') {
+                ?>
+                <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
+                <?php
+            } else {
+                ?>
                 <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
                 <?php
             }
-            ?>
-            <li class="font-semibold text-lg"><a href="#" class="font-semibold text-lg">About Us</a></li>
+        } else { ?>
+            <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
+            <?php
+        }
+        ?>
+        <li class="font-semibold text-lg"><a href="#" class="font-semibold text-lg">About Us</a></li>
         </ul>
         <div class="main">
             <?php
@@ -371,6 +358,19 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
         </div>
     </div>
 </div>
+
+<script>
+    function redirectToStatusPage(selectElement) {
+        // Get the selected option's value
+        var selectedValue = selectElement.value;
+        
+        // Extract the row ID from the select element's id attribute
+        var rowId = selectElement.id.split('-').pop();
+        
+        // Redirect to status.php with the selected value and row ID as query parameters
+        window.location = 'status.php?id=' + rowId + '&status=' + selectedValue;
+    }
+</script>
 
 <script>
     var customDialog = document.getElementById("confirmation");
