@@ -361,13 +361,11 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
 
 <script>
     function redirectToStatusPage(selectElement) {
-        // Get the selected option's value
+
         var selectedValue = selectElement.value;
-        
-        // Extract the row ID from the select element's id attribute
+
         var rowId = selectElement.id.split('-').pop();
         
-        // Redirect to status.php with the selected value and row ID as query parameters
         window.location = 'status.php?id=' + rowId + '&status=' + selectedValue;
     }
 </script>
