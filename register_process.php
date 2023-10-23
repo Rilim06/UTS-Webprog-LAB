@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session
+
 require_once("db.php");
 
 $password = $_POST["password"];
@@ -9,14 +11,18 @@ $stmt = $db->prepare($sql);
 $stmt->execute([$_POST['username']]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($_POST['username'] == $row["username"]) {
-        header("Location: register.php?error=error");
+if ($row && $_POST['username'] == $row["username"]) {
+    $_SESSION['signup_mode'] = true; // Set the session variable
+    header("Location: login.php?error=error");
 } else {
-        $sql = "INSERT INTO user (first_name, last_name, username, password, tanggal_lahir, jenis_kelamin) 
-        VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO user (first_name, last_name, username, password, tanggal_lahir, jenis_kelamin) 
+    VALUES (?, ?, ?, ?, ?, ?)";
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute([$_POST['first'], $_POST['last'], $_POST['username'], $en_pass, $_POST['tanggal'], $_POST['gender']]);
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$_POST['first'], $_POST['last'], $_POST['username'], $en_pass, $_POST['tanggal'], $_POST['gender']]);
 
-        header("Location: login.php");
+    unset($_SESSION['signup_mode']); // Unset the session variable
+
+    header("Location: login.php");
 }
+?>

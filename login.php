@@ -89,9 +89,9 @@ session_start();
                     </div>
                     <div class="input-field">
                         <i class="fas fa-venus-mars"></i>
-                        <select class="input-radio" placeholder="Gender">
-                            <option id="gdr" name="gender" value="Male">Male</option>
-                            <option id="gdr" name="gender" value="Female">Female</option>
+                        <select class="input-radio" name="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select>
                         <br />
                     </div>
@@ -133,18 +133,25 @@ session_start();
     </div>
 
     <script type="text/javascript">
-        const sign_in_btn = document.querySelector("#sign-in-btn");
-        const sign_up_btn = document.querySelector("#sign-up-btn");
-        const container = document.querySelector(".container");
+    const sign_in_btn = document.querySelector("#sign-in-btn");
+    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
 
-        sign_up_btn.addEventListener("click", () => {
-            container.classList.add("sign-up-mode");
-        });
+    // Check for the session variable and set the appropriate mode
+    const signupMode = <?php echo isset($_SESSION['signup_mode']) ? 'true' : 'false'; ?>;
+    if (signupMode) {
+        container.classList.add("sign-up-mode");
+    }
 
-        sign_in_btn.addEventListener("click", () => {
-            container.classList.remove("sign-up-mode");
-        });
-    </script>
+    sign_up_btn.addEventListener("click", () => {
+        container.classList.add("sign-up-mode");
+    });
+
+    sign_in_btn.addEventListener("click", () => {
+        container.classList.remove("sign-up-mode");
+    });
+</script>
+
 </body>
 
 </html>
