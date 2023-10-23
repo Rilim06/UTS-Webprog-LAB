@@ -2,6 +2,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
 }
 
 .form {
@@ -144,7 +146,7 @@ body {
 
 .backBtn {
     position: absolute;
-    top: 45vw;
+    bottom: 0;
 
     a {
         button {
@@ -192,7 +194,7 @@ body {
 
 @media screen and (max-width: 1599px) {
     .backBtn {
-        top: 50vw;
+        bottom: 50vw;
     }
 }
 
@@ -215,7 +217,12 @@ body {
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 762px) {
+    .backBtn {
+        bottom: 10%;
+    }
+}
+@media screen and (max-width: 389px) {
     .backBtn {
         bottom: 0;
     }

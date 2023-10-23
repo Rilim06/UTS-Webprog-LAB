@@ -111,23 +111,24 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
         <h1 class="text-1xl md:text-2xl lg:text-3xl ms-4 font-bold">Welcome,
             <?= htmlspecialchars($_SESSION['username']) ?>
         </h1>
-        <?php
-        if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
-            if ($_SESSION["username"] == 'admin') {
-                ?>
-                <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
-                <?php
-            } else {
-                ?>
+        <ul class="navbar">
+            <?php
+            if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
+                if ($_SESSION["username"] == 'admin') {
+                    ?>
+                    <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
+                    <?php
+                }
+            } else { ?>
                 <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
                 <?php
             }
-        } else { ?>
-            <li class="font-semibold text-lg"><a href="add.php">Add Quest</a></li>
-            <?php
-        }
-        ?>
-        <li class="font-semibold text-lg"><a href="#" class="font-semibold text-lg">About Us</a></li>
+            ?>
+            <li class="font-semibold text-lg"><a href="#" class="font-semibold text-lg">About Us</a></li>
         </ul>
         <div class="main">
             <?php
@@ -152,7 +153,7 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
             </select>
         </b>
     </div>
-    <div class="mobile-desktop">
+    <div class="mobile-desktop lg:grid lg:grid-cols-3">
         <div id='not-yet-started'>
             <p class="banner bg-red-300">| Not Yet Started</p>
             <?php
@@ -202,13 +203,14 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
                             </div>
                         </div>
                         <div class="right">
-                            <form class="deleteBtn" id='delete<?= $row['id'] ?>' action='delete.php' method='POST'>
+                            <form id='delete<?= $row['id'] ?>' action='delete.php' method='POST'>
                                 <input type='hidden' name='id' value='<?= $row['id'] ?>'>
-                                <button type='button' onclick='openCustomDialog(<?= $row["id"] ?>)'>Remove</button>
+                                <button class="deleteBtn" type='button'
+                                    onclick='openCustomDialog(<?= $row["id"] ?>)'>Remove</button>
                             </form>
-                            <form class="editBtn" id='edit<?= $row['id'] ?>' action='edit.php' method='POST'>
+                            <form id='edit<?= $row['id'] ?>' action='edit.php' method='POST'>
                                 <input type='hidden' name='id' value='<?= $row["id"] ?>'>
-                                <button type='submit'>Edit</button>
+                                <button class="editBtn" type='submit'>Edit</button>
                             </form>
                         </div>
                     </div>
@@ -266,13 +268,14 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
                             </div>
                         </div>
                         <div class="right">
-                            <form class="deleteBtn" id='delete<?= $row['id'] ?>' action='delete.php' method='POST'>
+                            <form id='delete<?= $row['id'] ?>' action='delete.php' method='POST'>
                                 <input type='hidden' name='id' value='<?= $row['id'] ?>'>
-                                <button type='button' onclick='openCustomDialog(<?= $row["id"] ?>)'>Remove</button>
+                                <button class="deleteBtn" type='button'
+                                    onclick='openCustomDialog(<?= $row["id"] ?>)'>Remove</button>
                             </form>
-                            <form class="editBtn" id='edit<?= $row['id'] ?>' action='edit.php' method='POST'>
+                            <form id='edit<?= $row['id'] ?>' action='edit.php' method='POST'>
                                 <input type='hidden' name='id' value='<?= $row['id'] ?>'>
-                                <button type='submit'>Edit</button>
+                                <button class="editBtn" type='submit'>Edit</button>
                             </form>
                         </div>
                     </div>
@@ -330,13 +333,14 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
                             </div>
                         </div>
                         <div class="right">
-                            <form class="deleteBtn" id='delete<?= $row['id'] ?>' action='delete.php' method='POST'>
+                            <form id='delete<?= $row['id'] ?>' action='delete.php' method='POST'>
                                 <input type='hidden' name='id' value='<?= $row['id'] ?>'>
-                                <button type='button' onclick='openCustomDialog(<?= $row["id"] ?>)'>Remove</button>
+                                <button class="deleteBtn" type='button'
+                                    onclick='openCustomDialog(<?= $row["id"] ?>)'>Remove</button>
                             </form>
-                            <form class="editBtn" id='edit<?= $row['id'] ?>' action='edit.php' method='POST'>
+                            <form id='edit<?= $row['id'] ?>' action='edit.php' method='POST'>
                                 <input type='hidden' name='id' value='<?= $row['id'] ?>'>
-                                <button type='submit'>Edit</button>
+                                <button class="editBtn" type='submit'>Edit</button>
                             </form>
                         </div>
                     </div>
@@ -365,7 +369,7 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
         var selectedValue = selectElement.value;
 
         var rowId = selectElement.id.split('-').pop();
-        
+
         window.location = 'status.php?id=' + rowId + '&status=' + selectedValue;
     }
 </script>

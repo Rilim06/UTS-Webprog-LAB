@@ -53,7 +53,7 @@ header {
   transition: all 0.5s ease;
 }
 .navbar a:hover {
-  color: #969696;
+  color: var(--copper);
 }
 .navbar a .active {
   color: #969696;
@@ -69,7 +69,7 @@ header {
   transition: all 0.5s ease;
 }
 .main a:hover {
-  color: #969696;
+  color: var(--copper);
 }
 .main .user {
   display: flex;
@@ -144,6 +144,8 @@ header {
 }
 body {
   font-family: "Montserrat", sans-serif;
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
 }
 
 .get-started {
@@ -235,10 +237,6 @@ body {
   }
 }
 
-.mobile-desktop {
-  display: flex;
-  justify-content: space-around;
-}
 .mobile-desktop .banner {
   padding: 0.5rem;
   margin: 1rem;
@@ -249,7 +247,7 @@ body {
 .box {
   margin: 1rem 1rem;
   padding: 1.5rem;
-  background-color: var();
+  background-color: white;
   border-radius: 1rem;
   justify-content: space-between;
   align-items: center;
@@ -309,7 +307,7 @@ body {
   border: 1px solid black;
   border-radius: 0.4em;
   box-shadow: 0 0.1em;
-  color: pink;
+  color: black;
   font-size: 1rem;
   margin: 0;
 }
@@ -322,6 +320,7 @@ body {
   box-shadow: 0em 0.05em;
 }
 .box .right .editBtn {
+  width: 100%;
   background: white;
   font-family: inherit;
   padding: 0.6em 1.3em;
@@ -329,7 +328,7 @@ body {
   border: 1px solid rgb(0, 0, 0);
   border-radius: 0.4em;
   box-shadow: 0 0.1em;
-  color: lightblue;
+  color: black;
   font-size: 1rem;
   margin: 0;
 }
@@ -443,7 +442,7 @@ body {
   .box {
     margin: 1rem 1rem;
     padding: 1.5rem;
-    background-color: var();
+    background-color: white;
     border-radius: 1rem;
     justify-content: space-between;
     align-items: center;
@@ -496,6 +495,7 @@ body {
     gap: 10px;
   }
   .box .right .deleteBtn {
+    width: 100%;
     background: white;
     font-family: inherit;
     padding: 0.6em 1.3em;
@@ -503,7 +503,7 @@ body {
     border: 1px solid black;
     border-radius: 0.4em;
     box-shadow: 0 0.1em;
-    color: pink;
+    color: black;
     font-size: 1rem;
     margin: 0;
   }
@@ -516,6 +516,7 @@ body {
     box-shadow: 0em 0.05em;
   }
   .box .right .editBtn {
+    width: 100%;
     background: white;
     font-family: inherit;
     padding: 0.6em 1.3em;
@@ -523,7 +524,7 @@ body {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 0.4em;
     box-shadow: 0 0.1em;
-    color: lightblue;
+    color: black;
     font-size: 1rem;
     margin: 0;
   }
@@ -625,7 +626,7 @@ body {
   .box {
     margin: 1rem 1rem;
     padding: 1.5rem;
-    background-color: var();
+    background-color: white;
     border-radius: 1rem;
     justify-content: space-between;
     align-items: center;
@@ -680,7 +681,7 @@ body {
     border: 1px solid black;
     border-radius: 0.4em;
     box-shadow: 0 0.1em;
-    color: pink;
+    color: black;
     font-size: 1rem;
   }
   .box .deleteBtn:hover {
@@ -692,6 +693,7 @@ body {
     box-shadow: 0em 0.05em;
   }
   .box .editBtn {
+    width: 100%;
     background: white;
     font-family: inherit;
     padding: 0.6em 1.3em;
@@ -699,7 +701,7 @@ body {
     border: 1px solid black;
     border-radius: 0.4em;
     box-shadow: 0 0.1em;
-    color: lightblue;
+    color: black;
     font-size: 1rem;
   }
   .box .editBtn:hover {
@@ -800,7 +802,7 @@ body {
   .box {
     margin: 1rem 1rem;
     padding: 1.5rem;
-    background-color: var();
+    background-color: white;
     border-radius: 1rem;
     justify-content: space-between;
     align-items: center;
@@ -855,7 +857,7 @@ body {
     border: 1px solid black;
     border-radius: 0.4em;
     box-shadow: 0 0.1em;
-    color: pink;
+    color: black;
     font-size: 1rem;
   }
   .box .deleteBtn:hover {
@@ -867,6 +869,7 @@ body {
     box-shadow: 0em 0.05em;
   }
   .box .editBtn {
+    width: 100%;
     background: white;
     font-family: inherit;
     padding: 0.6em 1.3em;
@@ -874,7 +877,7 @@ body {
     border: 1px solid black;
     border-radius: 0.4em;
     box-shadow: 0 0.1em;
-    color: lightblue;
+    color: black;
     font-size: 1rem;
   }
   .box .editBtn:hover {

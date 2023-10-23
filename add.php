@@ -11,9 +11,9 @@
         <div class="inputs">
             <input class="input" type="text" name="name" placeholder="Title" required />
             <input class="input" type="text" name="description" placeholder="Description" required />
-            <label>Assigned Date : </label>
+            <label>Due Date : </label>
             <input class="input" type="date" name="tanggal" placeholder="Date" required />
-            <input type="submit" value=""><button class="sigin-btn">Submit</button></input>
+            <input type="submit" value="" hidden><button class="sigin-btn">Submit</button></input>
         </div>
     </form>
     <a class="backBtn" href="index.php">
