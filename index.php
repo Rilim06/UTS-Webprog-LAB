@@ -165,10 +165,10 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
                 <div class='box'>
                     <div class="left">
                         <div class="title">
-                            <?= $row['task_name'] ?>
+                            <?= htmlspecialchars($row['task_name']) ?>
                         </div>
                         <div class="desc">
-                            <?= $row['task_desc'] ?>
+                            <?= htmlspecialchars($row['task_desc']) ?>
                         </div>
                         <div class="date">
                             Due:
@@ -229,10 +229,10 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
                 <div class='box'>
                     <div class="left">
                         <div class="title">
-                            <?= $row['task_name'] ?>
+                            <?= htmlspecialchars($row['task_name']) ?>
                         </div>
                         <div class="desc">
-                            <?= $row['task_desc'] ?>
+                            <?= htmlspecialchars($row['task_desc']) ?>
                         </div>
                         <div class="date">
                             Due:
@@ -293,10 +293,10 @@ if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
                 <div class='box'>
                     <div class="left">
                         <div class="title">
-                            <?= $row['task_name'] ?>
+                            <?= htmlspecialchars($row['task_name']) ?>
                         </div>
                         <div class="desc">
-                            <?= $row['task_desc'] ?>
+                            <?= htmlspecialchars($row['task_desc']) ?>
                         </div>
                         <div class="date">
                             Due:

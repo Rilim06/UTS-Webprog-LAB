@@ -15,5 +15,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <input type="text" name="name" value="<?= $row["task_name"] ?>" /><br />
     <label>Quest Detail : </label>
     <input type="text" name="description" value="<?= $row["task_desc"] ?>" /><br />
+    <label>Due Date : </label>
+    <input type="date" name="tanggal" value="<?= $row["tanggal"] ?>" /><br />
     <input type="submit" />
 </form>
