@@ -766,7 +766,7 @@ h-19.5c-1.8,0-3.2-1.5-3.2-3.2v0C207.4,428.6,208.9,427.2,210.7,427.2z" />
                 <?php
             }
             ?>
-            <li class="font-semibold text-lg"><a href="#" class="font-semibold text-lg">About Us</a></li>
+            <li class="font-semibold text-lg"><a href="about.php" class="font-semibold text-lg">About Us</a></li>
         </ul>
         <div class="main">
             <?php
