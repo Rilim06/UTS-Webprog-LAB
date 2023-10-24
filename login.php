@@ -132,12 +132,11 @@ session_start();
         </div>
     </div>
 
-    <script type="text/javascript">
+<script type="text/javascript">
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
     const container = document.querySelector(".container");
 
-    // Check for the session variable and set the appropriate mode
     const signupMode = <?php echo isset($_SESSION['signup_mode']) ? 'true' : 'false'; ?>;
     if (signupMode) {
         container.classList.add("sign-up-mode");

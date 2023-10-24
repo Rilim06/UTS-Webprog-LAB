@@ -745,7 +745,7 @@ h-19.5c-1.8,0-3.2-1.5-3.2-3.2v0C207.4,428.6,208.9,427.2,210.7,427.2z" />
 
     ?>
     <div class="border-2 opacity-0"></div>
-    <header class="shadow-md bg-[var(--almond)]">
+    <header class="shadow-md bg-white">
         <h1 class="text-1xl md:text-2xl lg:text-3xl ms-4 font-bold">Welcome,
             <?= htmlspecialchars($_SESSION['username']) ?>
         </h1>
