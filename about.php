@@ -42,16 +42,20 @@ $data = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task IF330</title>
-
+    <title>Task Tracker IF330</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="about.css">
-   
+   <style>
+    body{
+        overflow-x: hidden;
+        background: url("./assets/bg.jpg");
+        background-repeat: no-repeat;
+  background-size: cover;
+    }
+   </style>
 </head>
 
 <body>
-
     <div class="container">
         <div class="flex justify-center items-center">
             <a href="index.php" class="text-lg font-bold text-black">Back to Home</a>
@@ -75,8 +79,6 @@ $data = [
             <?php endforeach; ?>
         </div>
     </div>
-   
-    
     <script type="text/javascript">
         let menu = document.querySelector('#menu-icon');
         let navbar = document.querySelector('.navbar');
@@ -87,7 +89,6 @@ $data = [
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
